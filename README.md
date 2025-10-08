@@ -4,8 +4,8 @@ RLX is a collection of Reinforcement Learning algorithms implemented based on th
 
 ## Prerequisites
 
-- Python 3.9 or later
-- Poetry for dependency management
+- Python 3.11 or later
+- uv for dependency management
 - An Apple device with an M-series chip
 
 ## Installation
@@ -17,9 +17,9 @@ git clone https://github.com/noahfarr/rlx.git
 cd rlx
 ```
 
-Install dependencies using Poetry:
+Install dependencies using uv:
 ```bash
-poetry install
+uv sync
 ```
 
 ## Structure
@@ -36,7 +36,7 @@ To run a specific algorithm, navigate to its directory and execute the main scri
 
 ```bash
 cd alg1
-poetry run python main.py
+uv run python main.py
 ```
 Replace alg1 with the directory of the algorithm you wish to run.
 

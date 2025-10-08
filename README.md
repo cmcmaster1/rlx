@@ -26,19 +26,41 @@ uv sync
 
 The project is organized into directories by algorithm. Each directory contains the implementation of a specific Reinforcement Learning algorithm, making the project modular and scalable. Here's an overview:
 
-- alg1/: Implementation of Algorithm 1
-- alg2/: Implementation of Algorithm 2
-...
+- **a2c/**: Advantage Actor-Critic algorithm
+- **cql/**: Conservative Q-Learning for offline reinforcement learning
+- **dqn/**: Deep Q-Network algorithm
+- **ppo/**: Proximal Policy Optimization algorithm
+- **reinforce/**: REINFORCE policy gradient algorithm
+- **sac/**: Soft Actor-Critic algorithm
+- **td3/**: Twin Delayed Deep Deterministic Policy Gradient algorithm
 
 ## Usage
 
 To run a specific algorithm, navigate to its directory and execute the main script. For example:
 
 ```bash
-cd alg1
+# Run DQN
+cd dqn
+uv run python main.py
+
+# Run CQL (Conservative Q-Learning) for offline RL
+cd cql
+uv run python main.py --dataset_path /path/to/your/dataset.npz
+
+# Run PPO
+cd ppo
 uv run python main.py
 ```
-Replace alg1 with the directory of the algorithm you wish to run.
+
+### Offline Reinforcement Learning with CQL
+
+The CQL implementation is specifically designed for offline reinforcement learning, where you train on pre-collected datasets rather than interacting with environments in real-time. This is perfect for scenarios where:
+
+- You have historical data but can't collect new data
+- Environment interaction is expensive or dangerous
+- You want to leverage existing datasets for policy learning
+
+See the [CQL documentation](rlx/cql/README.md) for detailed usage instructions.
 
 ## Contributing
 
